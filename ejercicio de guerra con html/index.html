@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./ejercitos.js"></script>
+    <title>Guerra</title>
+    <style>
+        h1 {
+            text-align: center;
+            padding: 5px;
+            margin: 0;
+        }
+
+        body {
+            background-color: #cfd6d5;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .layout {
+            display: flex;
+            height: 100vh;
+            width: 90%;
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        .form1 {
+            background-color: #A6D8FD;
+            padding: 5px;
+            border-radius: 12px;
+            margin: 10px auto;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+
+        }
+
+        .form2 {
+            background-color: #A6D8FD;
+            padding: 5px;
+            border-radius: 12px;
+            margin: 10px auto;
+        }
+
+        input[type="number"] {
+            width: 90%;
+            padding: 6px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .cont-btn {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .boton {
+            background-color: #3498db;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #2980b9;
+        }
+
+
+        .boton {
+            background-color: #3498db;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .boton:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .seccion {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .izquierda {
+            color: black;
+        }
+
+        .centro {
+            color: black;
+        }
+
+        .derecha {
+
+            color: black;
+        }
+
+        .cont-btn {
+            text-align: right;
+            padding-top: 10px;
+        }
+
+        #btnCrearEjercito {
+            background-color: #1cea26;
+        }
+
+        #btnCrearEjercito:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        #batalla {
+            background-color: red;
+        }
+
+        #batalla:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        #nueva-batalla {
+            background-color: #A5D7FE;
+        }
+
+        #nueva-batalla:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>La Guerra en HD</h1>
+    <div class="layout">
+        <div class="seccion izquierda">
+            <div class="form1">
+                <form id="formSubmarino" action="#" method="post">
+                    <fieldset>
+                        <legend>Vida y poder del Submarino</legend>
+                        <img id="submarino" alt="Imagen Submarino" width="50" height="50">
+                        <label for="vida">Vida Máxima:</label>
+                        <input type="number" name="vida" id="vida">
+                        <label for="poder">Poder Máximo:</label>
+                        <input type="number" id="poder" name="poder">
+                    </fieldset>
+                    <div class="cont-btn">
+                        <button type="submit" id="btnSubmarino" class="boton">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form2">
+                <form id="formVida" action="#" method="post">
+                    <fieldset>
+                        <legend>Calculo de vida</legend>
+                        <div>
+                            <img id="regular" alt="Imagen Soldado regular" width="30" height="30">
+                            <label for="soldadoRegular">Soldado Regular :</label>
+                            <input type="number" name="soldadoRegularNum" id="soldadoRegularNum" style="width: 30px;"
+                                required> /
+                            <input type="number" name="soldadoRegularDen" id="soldadoRegularDen" style="width: 30px;"
+                                required>
+                        </div>
+                        <div>
+                            <img id="profesional" alt="Imagen Soldado profesional" width="30" height="30">
+                            <label for="soldadoProfesional">Soldado Profesional :</label>
+                            <input type="number" name="soldadoProfesionalNum" id="soldadoProfesionalNum"
+                                style="width: 30px;" required> /
+                            <input type="number" name="soldadoProfesionalDen" id="soldadoProfesionalDem"
+                                style="width: 30px;" required>
+                        </div>
+                        <div>
+                            <img id="elite" alt="Imagen Soldado Elite" width="30" height="30">
+                            <label for="elite">Soldado Elite :</label>
+                            <input type="number" name="eliteNum" id="eliteNum" style="width: 30px;" required> /
+                            <input type="number" name="eliteDen" id="eliteDen" style="width: 30px;" required>
+                        </div>
+                        <div>
+                            <img id="tanque" alt="Imagen Soldado profesional" width="30" height="30">
+                            <label for="tanque">CarroTanque :</label>
+                            <input type="number" name="tanqueNum" id="tanqueNum" style="width: 30px;" required> /
+                            <input type="number" name="tanqueDen" id="tanqueDen" style="width: 30px;" required>
+                        </div>
+                        <div>
+                            <img id="helicoptero" alt="Imagen helicoptero" width="30" height="30">
+                            <label for="helicoptero">Helicoptero :</label>
+                            <input type="number" name="helicopteroNum" id="helicopteroNum" style="width: 30px;"
+                                required> /
+                            <input type="number" name="helicopteroDen" id="helicopteroDen" style="width: 30px;"
+                                required>
+                        </div>
+                        <div>
+                            <img id="avion" alt="Imagen helicoptero" width="30" height="30">
+                            <label for="avion">Avionde Combate :</label>
+                            <input type="number" name="avionNum" id="avionNum" style="width: 30px;" required> /
+                            <input type="number" name="avionDen" id="avionDen" style="width: 30px;" required>
+                        </div>
+                    </fieldset>
+                    <div class="cont-btn">
+                        <button type="submit" id="guardar-fraccion" class="boton">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="cont-btn">
+                <button id="btnCrearEjercito" class="boton">Crear Ejércitos</button>
+            </div>
+        </div>
+        <div class="seccion centro">
+            <div id="ejercito1">
+            </div>
+            <div id="ejercito2">
+            </div>
+            <div class="cont-btn">
+                <button id="batalla" class="boton">Fight!</button>
+            </div>
+        </div>
+        <div class="seccion derecha">
+            <div id="logs">
+
+            </div>
+            <div class="cont-btn">
+                <button id="nueva-batalla" class="boton">Nueva Guerra</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
