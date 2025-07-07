@@ -1,14 +1,4 @@
-//  import { Usuario } from "./clase/usuario"; 
- class Usuario {
-    constructor(nombre, correo) {
-        this.nombre = nombre;
-        this.correo = correo;
-    }
-
-    mostrarInfo() {
-        return `Nombre: ${this.nombre}, Correo: ${this.correo}`;
-    }
-}
+import { Usuario } from "./clase/usuario"; 
 
 const usuarioClass = new Usuario("carlos", "carlos@mail.com");
 
@@ -21,7 +11,6 @@ const obtenerDatos = async () => {
             fetch('https://picsum.photos/v2/list?page=20&limit=10')
         ]);
 
-        const [nombreUsuario] = await usuariosRes.json();
         const posts = await post.json();
         const nuevasFotos = await fotosNuevas.json();
         const imagenes = [];
