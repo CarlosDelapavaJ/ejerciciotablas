@@ -1,0 +1,209 @@
+@media (min-width: 500px) and (orientation: landscape) {
+    h1 {
+        margin: 1%;
+    }
+
+    .estiloresponsive {
+        float: right;
+        padding-left: 15px;
+    }
+}
+
+@keyframes nombre_fotograma_clave {
+    0% {
+        left: 100px;
+    }
+
+    40% {
+        left: 150px;
+    }
+
+    60% {
+        left: 75px;
+    }
+
+    100% {
+        left: 100px;
+    }
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
+    background-color: #000;
+    color: #fff;
+    background: repeating-linear-gradient(#fff, #666 25%)
+}
+
+#fondos {
+    background: url(fondo.jpg) bottom right no-repeat,
+        url(fondo1.jpg) center no-repeat,
+        url(fondo2.jpg) center repeat;
+    width: 300px;
+    height: 200px;
+    border-image-source: url(fondo1.jpg);
+}
+
+div.cuadrado {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    margin: 5px;
+}
+
+div.textogrande {
+    font-family: verdana, arial, helvetica;
+    font-weight: bold;
+    font-size: 40pt;
+}
+
+.divejemplo {
+    background-image: url(fondo.jpg);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#cajasombra {
+    background-color: #ddd;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 5px 5px 0 #333;
+    margin-bottom: 20px;
+}
+
+#sombraclara {
+    width: 200px;
+    padding: 10px;
+    background-color: #999;
+    color: #fff;
+    box-shadow: 2px 2px 2px #ffc;
+    margin-bottom: 20px;
+}
+
+#sombraredondeada {
+    background-color: #090;
+    color: #fff;
+    width: 400px;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 15px -10px 3px #000;
+}
+
+
+#resplandorblanco {
+    box-shadow: 0px 0px 30px #ffffff;
+    padding: 10px;
+    border: 1px solid #fff;
+    width: 160px;
+    margin: 40px;
+}
+
+#resplandorverde {
+    box-shadow: 0px 0px 30px #A3FF0F;
+    padding: 10px;
+    border: 1px solid #66ff00;
+    width: 160px;
+    margin: 40px;
+}
+
+#triangulo {
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #090;
+    border-right: 30px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+#bocadillo {
+    padding: 10px;
+    width: 220px;
+    border-radius: 10px;
+    background-color: #f80;
+    font-family: "trebuchet ms", tahoma, verdana, sansserif;
+    font-size: 1.4em;
+    color: blueviolet;
+}
+
+#bocadillo:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-right: 60px solid #090;
+    border-bottom: 20px solid transparent;
+    margin: 10px 0 0 32px;
+}
+
+#bocadilloarriba {
+    padding: 10px;
+    width: 220px;
+    border-radius: 10px;
+    background-color: #8f0;
+    font-family: "trebuchet ms", tahoma, verdana, sansserif;
+    font-size: 1.4em;
+}
+
+#bocadilloarriba:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #f80;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    margin: -10px 0 0 90px;
+}
+
+@font-face {
+    font-family: "gothic";
+    font-style: normal;
+    font-weight: normal;
+    src: url(gothic.otf);
+}
+
+h1 {
+    text-shadow: 1px 2px #999;
+}
+
+h2 {
+    font-family: "Vivaldi";
+    text-shadow: 3px 3px 2px #696;
+    color: #666;
+}
+
+h3 {
+    text-shadow: 10px 8px #ccf, -10px 12px #fcf, -8px -12px #cfc, 12px -5px #fc9;
+    color: #999;
+}
+
+h4 {
+    text-shadow: #f83 -1px 1px, #f83 -2px 2px, #f83 -3px 3px, #f83 -4px 4px, #f83 -5px 5px;
+    color: #060;
+    letter-spacing: 1px;
+}
+
+h4.fuego {
+    text-shadow: 0 0 20px #fefcc9, 2px -2px 3px #feec85, -4px -4px 5px #ffae34, 5px -10px 6px #ec760c, -5px -12px 8px #cd4606, 0 -15px 20px #973716, 2px -15px 20px #451b0e;
+    color: #666;
+}
+
+h4.contornear {
+    text-shadow: -1px 0 #090, 1px 0 #090, 0 1px #090, 0 -1px #090;
+    color: #fff;
+}
+
+h4.relieve {
+    text-shadow: 1px 1px white, -1px -1px #333;
+    background-color: #ddd;
+    color: #ddd;
+    padding: 10px;
+}
+
+h4.pixelart {
+    text-shadow: 1px 1px #666, 2px 2px #86D6D3, 3px 3px #666, 4px 4px #86D6D3;
+    color: #ccc;
+}
+
+.amount {
+    font-variant-numeric: oldstyle-nums diagonal-fractions;
+}

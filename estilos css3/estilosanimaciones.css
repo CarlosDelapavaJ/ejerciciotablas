@@ -1,0 +1,657 @@
+@keyframes movimiento-lateral {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 100px;
+    }
+}
+
+@keyframes fondo {
+    from {
+        top: -260%;
+    }
+
+    to {
+        top: 100%;
+    }
+}
+
+@keyframes nieve {
+    from {
+        top: -10px;
+    }
+
+    to {
+        top: 450px;
+    }
+}
+
+@keyframes copos {
+    0% {
+        transform: rotate(-180deg) translate(0px, 0px);
+    }
+
+    100% {
+        transform: rotate(180deg) translate(10px, 75px);
+    }
+}
+
+@keyframes nube {
+    from {
+        left: 100px;
+        opacity: 1;
+    }
+
+    to {
+        left: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes hojas {
+    from {
+        top: 150px;
+        opacity: 1;
+    }
+
+    to {
+        top: 400px;
+        opacity: 0;
+    }
+}
+
+@keyframes hoja {
+    0% {
+        transform: rotate(-180deg) translate(0px, 0px);
+    }
+
+    100% {
+        transform: rotate(180deg) translate(10px, 75px);
+    }
+}
+
+@keyframes mano2 {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+
+    100% {
+        transform: rotate(-60deg) translate(0px, 0px);
+    }
+}
+
+@keyframes mano2 {
+    0% {
+        -webkit-transform: rotate(0deg) translate(0px, 0px);
+    }
+
+    100% {
+        -webkit-transform: rotate(-60deg) translate(0px, 0px);
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: gradient(linear, left top, left bottom, from(#34bdfc), to(#f5f8fa));
+}
+
+
+#manoderecha {
+    position: absolute;
+    top: 250px;
+    left: 279px;
+    width: -10px;
+}
+
+#manoizquierda {
+    position: absolute;
+    top: 250px;
+    left: 340px;
+    width: 8px;
+    animation-name: mano2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#nube {
+    position: relative;
+    animation-name: nube;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+#hoja div {
+    position: absolute;
+    top: -40px;
+    animation-name: hoja, hojas;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in;
+}
+
+.hojas {
+    position: absolute;
+}
+
+.hojas.f1 {
+    left: 40px;
+    animation-duration: 5s;
+}
+
+.hojas.f2 {
+    font-size: 1.8em;
+    left: 100px;
+    animation-duration: 7s;
+}
+
+#manoderecha {
+    position: absolute;
+    top: 250px;
+    left: 279px;
+    width: -10px;
+}
+
+#manoizquierda {
+    position: absolute;
+    top: 250px;
+    left: 340px;
+    width: 8px;
+    animation-name: mano2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+
+#snow div {
+    position: absolute;
+    top: -40px;
+    animation-name: nieve, copos;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in;
+}
+
+.copos {
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+}
+
+.copos.f1 {
+    left: 40px;
+    animation-duration: 5s;
+}
+
+.copos.f2 {
+    font-size: 1.8em;
+    left: 120px;
+    animation-duration: 7s;
+}
+
+.copos.f3 {
+    left: 200px;
+    animation-duration: 8s;
+}
+
+.copos.f4 {
+    font-size: 1.5em;
+    left: 280px;
+    animation-duration: 6s;
+}
+
+
+#anim {
+    animation-name: movimiento-lateral;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    width: 100px;
+    background-color: Teal;
+    color: #fff;
+    position: relative;
+    padding: 2px;
+}
+
+#matrix {
+    margin: 1em auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    color: rgba(0, 255, 0, .7);
+    text-shadow: rgba(255, 255, 255, .8) 0px 0px 4px;
+    position: relative;
+}
+
+#matrix div {
+    position: absolute;
+    top: 0;
+    transform-origin: 0%;
+    transform: rotate(90deg);
+    animation-name: fondo;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#container {
+    background: #666 url(fondo.jpg) no-repeat;
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+#container1 {
+    background: #666 url(fondo1.jpg) no-repeat;
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+#situacion {
+    width: 200px;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+#container1 {
+    background: #666 url(fondo2.jpg) no-repeat;
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+#situacion {
+    width: 200px;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+
+.f1 {
+    font-size: 1.2em;
+}
+
+.f2 {
+    font-size: .9em;
+}
+
+.c1 {
+    color: rgba(0, 255, 0, .5);
+}
+
+.d1 {
+    animation-duration: 4s;
+}
+
+.d2 {
+    animation-duration: 6s;
+}
+
+.d3 {
+    animation-duration: 8s;
+}
+
+.d4 {
+    animation-duration: 10s;
+}
+
+.de {
+    animation-delay: 3s;
+}
+
+ul.fotos {
+    width: 970px;
+    margin: 0 0 18px -30px;
+}
+
+ul.fotos li {
+    display: inline;
+}
+
+ul.fotos a {
+    display: inline;
+    float: left;
+    margin: 0 0 27px 30px;
+    width: auto;
+    padding: 10px 10px 15px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+}
+
+ul.fotos img {
+    display: block;
+    width: 190px;
+    margin-bottom: 12px;
+}
+
+ul.fotos a:after {
+    content: attr(title);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    transform: rotate(-2deg);
+    transition: transform .15s linear;
+}
+
+ul.fotos li:nth-child(3n) a {
+    transform: none;
+    position: relative;
+    top: -5px;
+}
+
+ul.fotos li:nth-child(5n) a {
+    transform: rotate(5deg);
+    position: relative;
+    right: 5px;
+}
+
+ul.fotos li a:hover {
+    transform: scale(1.25);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 5;
+}
+
+#galeria {
+    width: 800px;
+    height: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    position: relative;
+}
+
+#galeria div {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0.9;
+    transition: all 0.5s linear;
+    border-radius: 15px;
+    box-shadow: -3px -3px 50px #666;
+    transform: scale(0.60);
+}
+
+#galeria div:hover {
+    z-index: 999;
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+#imagen1 {
+    top: 50px;
+    left: 130px;
+    z-index: 1;
+}
+
+#imagen2 {
+    top: 300px;
+    left: 100px;
+    z-index: 7;
+}
+
+#imagen3 {
+    top: 420px;
+    left: 350px;
+    z-index: 3;
+}
+
+#imagen4 {
+    top: 135px;
+    left: 450px;
+    z-index: 4;
+}
+
+#imagen5 {
+    top: -100px;
+    right: 200px;
+    z-index: 5;
+}
+
+#imagen6 {
+    top: 220px;
+    right: 120px;
+    z-index: 6;
+}
+
+.menu-general {
+    margin-top: 50px;
+    position: relative;
+    float: left;
+}
+
+ul.nav {
+    list-style: none;
+    display: block;
+    width: 200px;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    padding: 60px 0 60px 0;
+    background-size: 50% 100%;
+}
+
+ul.nav li a {
+    transition: all 0.3s ease-out;
+    background: #f77e08;
+    color: #174867;
+    padding: 7px 15px 7px 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px #0e169b;
+}
+
+ul.nav li a:hover {
+    background: #faef77;
+    color: #67a5cd;
+    padding: 7px 15px 7px 30px;
+}
+
+.button,
+.button span {
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.button {
+    white-space: nowrap;
+    line-height: 1em;
+    position: relative;
+    outline: none;
+    overflow: visible;
+    cursor: pointer;
+    border: 1px solid #999;
+    border: rgba(0, 0, 0, .2) 1px solid;
+    border-bottom: rgba(0, 0, 0, .4) 1px solid;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    background: linear-gradient(center top,
+            rgba(255, 255, 255, .1) 0%,
+            rgba(0, 0, 0, .1) 100%);
+    background: gradient(linear,
+            center bottom,
+            center top,
+            from(rgba(0, 0, 0, .1)),
+            to(rgba(255, 255, 255, .1)));
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.button.full,
+.button.full span {
+    display: block;
+}
+
+.button:hover,
+.button.hover {
+    background: linear-gradient(center top,
+            rgba(255, 255, 255, .2) 0%,
+            rgba(255, 255, 255, .1) 100%);
+    background: gradient(linear,
+            center bottom,
+            center top,
+            from(rgba(255, 255, 255, .1)),
+            to(rgba(255, 255, 255, .2)));
+}
+
+.button:active,
+.button.active {
+    top: 1px;
+}
+
+.button span {
+    position: relative;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-top: rgba(255, 255, 255, .2) 1px solid;
+    padding: 0.6em 1.3em;
+    line-height: 1em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.button.pequeno span {
+    font-size: 12px;
+}
+
+.button.mediano span {
+    font-size: 16px;
+}
+
+.button.grande span {
+    font-size: 22px;
+}
+
+button.rojo {
+    background-color: #e62727;
+}
+
+.button.naranja {
+    background-color: #ff5c00;
+}
+
+.button.azul {
+    background-color: #00ADEE;
+}
+
+A {
+    color: #0000cc;
+    text-decoration: none;
+}
+
+#circulo {
+    background-image: url(fondo.jpg);
+    height: 100px;
+    position: relative;
+    width: 100px;
+    animation: gira 3s alternate infinite;
+    border-radius: 50%;
+}
+
+@keyframes gira {
+    0% {
+        top: 0px;
+        left: 600px;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 130px;
+        left: 200px;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 400px;
+        left: 600px;
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 50px;
+}
+
+.loader div {
+    width: 12px;
+    background: #888;
+    animation: loader 1.8s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        height: 12px;
+    }
+
+    25% {
+        height: 50px;
+    }
+
+    50% {
+        height: 10px;
+    }
+
+    75% {
+        height: 25px;
+    }
+
+    100% {
+        height: 12px;
+    }
+}
+
+.loader div:nth-child(2) {
+    animation-delay: -0.25s;
+}
+
+div {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: red;
+    opacity: 1;
+    float: left;
+    width: 100px;
+    height: 1px;
+}
+
+@keyframes mi-animacion {
+    0% {
+        height: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 25px;
+        opacity: 0.5;
+    }
+}
+
+div {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: red;
+    opacity: 0.5;
+    float: left;
+    width: 100px;
+    height: 25px;
+    animation: mi-animacion 2s;
+}
