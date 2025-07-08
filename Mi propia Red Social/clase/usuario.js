@@ -1,4 +1,4 @@
-export class Usuario {
+class Usuario {
     constructor(nombre, correo) {
         this.nombre = nombre;
         this.correo = correo;
@@ -8,5 +8,4 @@ export class Usuario {
         return `Nombre: ${this.nombre}, Correo: ${this.correo}`;
     }
 }
-
-
+export default Usuario;

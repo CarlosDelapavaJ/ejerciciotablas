@@ -1,18 +1,18 @@
-import { Usuario } from "./clase/usuario"; 
+import Usuario from "./clase/usuario.js";
 
-const usuarioClass = new Usuario("carlos", "carlos@mail.com");
+
 
 const obtenerDatos = async () => {
     try {
         const [usuariosRes, post, fotosNuevas] = await Promise.all([
             fetch('https://jsonplaceholder.typicode.com/users'),
-            fetch('https://jsonplaceholder.typicode.com/photos?_limit=10'),
             fetch('https://jsonplaceholder.typicode.com/posts?_limit=5'),
             fetch('https://picsum.photos/v2/list?page=20&limit=10')
         ]);
-
+        const usuarioApi = await usuariosRes.json();
         const posts = await post.json();
         const nuevasFotos = await fotosNuevas.json();
+        const usuarioClass = new Usuario(usuarioApi[0].name,usuarioApi[0].email);
         const imagenes = [];
         for (const element of nuevasFotos) {
             const { download_url } = element
