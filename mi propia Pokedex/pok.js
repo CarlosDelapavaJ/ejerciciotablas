@@ -5,11 +5,7 @@ boton.addEventListener('click', () => {
     const pokemon = boton.getPrueba();
     const tiposTexto = pokemon.types.map(t => t.type.name).join(', ');
 
-    // // Verifica si ya existe una tarjeta
-    let tpl = document.getElementById('tarjeta');
-
     let templateContainer = document.getElementById('template-container');
-    console.log(pokemon, tiposTexto, tpl, templateContainer)
 
     let comp = document.querySelector('.tarjeta-detalle');
 
@@ -39,7 +35,7 @@ boton.addEventListener('click', () => {
         clon.querySelector('#defensa').textContent = "Defensa: " + pokemon.stats[2].base_stat;
         clon.querySelector('#ataque').textContent = "Ataque: " + pokemon.stats[1].base_stat;
         clon.querySelector('#velocidad').textContent = "Velocidad: " + pokemon.stats[5].base_stat;
-        document.body.appendChild(clon);
+        templateContainer.appendChild(clon);
     }
 
 });

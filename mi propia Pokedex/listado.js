@@ -14,6 +14,9 @@ class PokemonList extends HTMLElement {
     connectedCallback() {
         this.fetchPokemons();
     }
+    attributeChangedCallback(){
+        console.log("cambiar")
+    }
 
     async fetchPokemons() {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=150');
@@ -34,46 +37,30 @@ class PokemonList extends HTMLElement {
     render() {
         this.shadowRoot.innerHTML = `
       <style>
-       .card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 12px 16px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    font-size: 14px;
+    max-width: 300px; /* opcional, para limitar el ancho */
+}
 
-        .card img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-right: 16px;
-        }
+.card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    margin-right: 12px;
+}
 
-        .card-content {
-            flex: 1;
-            text-align: center;
-        }
-
-        .card-content h2 {
-            margin: 0;
-            
-        }
-
-        .card-content p {
-            
-            color: #666;
-        }
-
-        .card input[type="checkbox"] {
-            transform: scale(1.3);
-        }
       </style>
       
+    
 
     ${this.seleccion.map(p => `
     <div class="card"  data-name="${p.name}" id=${p.id}>
@@ -82,7 +69,7 @@ class PokemonList extends HTMLElement {
     <h2>${p.name}</h2>
     <p>${p.types.map(t => t.type.name).join(', ')}</p>
     </div>
-    <input type="checkbox" ${p.favorite ? 'checked' : ''}>
+    <input type="checkbox" class="favorite-checkbox" data-id="${p.id}" ${p.favorite ? 'checked' : ''}>
     </div>
     `).join('')}
       
@@ -90,28 +77,53 @@ class PokemonList extends HTMLElement {
     }
 
     addEventListeners() {
+        const checkboxes = this.shadowRoot.querySelectorAll('.favorite-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const id = parseInt(e.target.getAttribute('data-id'));
+                const pokemon = this.pokemons.find(p => p.id === id);
+                if (pokemon) {
+                    pokemon.favorite = e.target.checked;
+                }
+            });
+
+        });
+        console.log("check")
         const botones = this.shadowRoot.querySelectorAll('.card');
         botones.forEach(boton => {
             boton.addEventListener('click', (e) => {
-                const nombre = e.target.getAttribute('data-name');
                 const id = e.target.getAttribute('id');
-                alert(`¡Haz hecho clic en ${nombre}!`);
                 this._prueba = id
             });
         });
     }
 
     getPrueba() {
-        return this.seleccion[this._prueba - 1];
+        let sec = null;
+        this.seleccion.forEach(p => {
+            if (p.id == this._prueba) {
+                sec = p;
+            }
+        })
+        return sec;
     }
 
     getRender() {
-        this.seleccion =[];
+        this.seleccion = [];
         for (let index = min; index < max; index++) {
-            this.seleccion.push( this.pokemons[index]);
-            
+            this.seleccion.push(this.pokemons[index]);
+
         }
-        console.log(this.seleccion)
+        this.render()
+        this.addEventListeners();
+    }
+    getFavorite() {
+        this.seleccion = [];
+        this.pokemons.forEach(element => {
+            if (element.favorite == true) {
+                this.seleccion.push(element)
+            }
+        });
         this.render()
     }
 
@@ -122,17 +134,35 @@ customElements.define('pokemon-list', PokemonList);
 const boton = document.querySelector('pokemon-list');
 
 previous.addEventListener("click", () => {
-  if (min != 0) {
-    min -= 10;
-    max -= 10
-    boton.getRender();
-  }
+    if (min != 0) {
+        min -= 10;
+        max -= 10
+        boton.getRender();
+    }
 
 });
 
 next.addEventListener("click", () => {
-  min += 10;
-  max += 10;
-  boton.getRender();
+    min += 10;
+    max += 10;
+    boton.getRender();
 });
+todos.addEventListener("click", () => {
+    boton.getRender()
+
+});
+favorito.addEventListener("click", () => {
+    boton.getFavorite()
+});
+
+
+const checkboxes = this.shadowRoot.querySelectorAll('favorite-checkbox');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+
+        console.log(`Pokémon ${pokemon.name} favorito: ${pokemon.favorite}`);
+
+    });
+});
+
 

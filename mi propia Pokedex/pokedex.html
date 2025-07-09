@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pokemon-style.css" media="(min-width:1200px)">
-    <script type="module" src="pok.js"></script>
-    <script type="module" src="./listado.js"></script>
+
     <title>Document</title>
 </head>
 
 <body>
     <div class="contenedor">
         <div class="pokemon-list-container">
+            <div class="filters">
+                <button id="todos">Todos</button>
+                <button id="favorito">Favoritos</button>
+            </div>
             <pokemon-list></pokemon-list>
             <nav class="pagination" aria-label="...">
                 <ul class="pagination">
@@ -45,6 +48,8 @@
             </template>
         </div>
     </div>
+    <script type="module" src="./pok.js"></script>
+    <script type="module" src="./listado.js"></script>
 </body>
 
 </html>
