@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pokemon-style.css" media="(min-width:1200px)">
+    <script type="module" src="pok.js"></script>
+    <script type="module" src="./listado.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="pokemon-list-container">
+            <pokemon-list></pokemon-list>
+            <nav class="pagination" aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item" id="previous">
+                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                    </li>
+                    <li class="page-item" id="next">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="template-container" id="template-container">
+            <template id="tarjeta">
+                <div class="tarjeta-detalle">
+                    <h2 id="titulo"></h2>
+                    <img id="frente" src="" alt="imagen1">
+                    <img id="espalda" src="">
+                    <img id="shiny" src="">
+                    <div class="card1">
+                        <div id="experiencia"></div>
+                        <div id="altura"></div>
+                        <div id="salud"></div>
+                        <div id="defensa"></div>
+                        <div id="ataque"></div>
+                        <div id="velocidad"></div>
+                        <div id="tipo"></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</body>
+
+</html>

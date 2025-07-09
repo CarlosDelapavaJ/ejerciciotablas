@@ -1,0 +1,23 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    /* Altura completa de la ventana */
+}
+
+.template-container {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #f0f0f0;
+    /* Solo para visualizar */
+    padding: 10px;
+}
+
+.pokemon-list-container {
+    width: 35%;
+    background-color: #e0e0ff;
+    /* Solo para visualizar */
+    padding: 10px;
+}
