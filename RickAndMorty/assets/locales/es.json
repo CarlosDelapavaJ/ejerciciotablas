@@ -1,0 +1,23 @@
+{
+  "buttonText": "Uno Más",
+  "labelText": "Hola este es el ",
+  "labelMorty": "Personajes de Rick y Morty",
+  "buttonTexAll": "Cargar Personajes de Rick y Morty",
+  "buttonTextMorty": "Cargar Datos Morty",
+  "characterName": "Nombre: ",
+  "characterSpecies": "Especie: ",
+  "characterGender": "Género: ",
+  "characterOrigin": "Origen: ",
+  "characterLocation": "Ubicación: ",
+  "characterStatus": "Estado: ",
+  "language": "Idioma",
+  "spanish": "Español",
+  "english": "Inglés",
+  "selectStatus": "Estatus",
+  "aliveState": "Vivo",
+  "deadState": "Muerto",
+  "unknownState": "desconocido",
+  "textFiltro": "Filtrar por origen",
+  "buttonFilter": "Filtrar",
+  "loading": "Cargando Personajes"
+}

@@ -1,0 +1,23 @@
+{
+  "buttonText": "one more",
+  "labelText": "Hi, this is the ",
+  "labelMorty": "Rick and Morty characters",
+  "buttonTexAll": "Load Rick and Morty Characters",
+  "buttonTextMorty": "Load Morty Data",
+  "characterName": "Name: ",
+  "characterSpecies": "Species: ",
+  "characterGender": "Gender: ",
+  "characterOrigin": "Origin: ",
+  "characterLocation": "Location: ",
+  "characterStatus": "Status: ",
+  "language": "Language",
+  "spanish": "Spanish",
+  "english": "English",
+  "selectStatus": "Status",
+  "aliveState": "Alive",
+  "deadState": "Dead",
+  "unknownState": "Unknown",
+  "textFiltro": "Filter by origin",
+  "buttonFilter": "Filter",
+  "loading": "Loading Characters"
+}
