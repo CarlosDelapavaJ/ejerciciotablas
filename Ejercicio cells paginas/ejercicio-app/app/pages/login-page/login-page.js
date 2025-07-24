@@ -80,7 +80,6 @@ class LoginPage extends intl(CellsPage) {
   }
 
   firstUpdated(props) {
-    super.firstUpdated && super.firstUpdated(props);
     const queryScope = this.shadowRoot ? this.shadowRoot : this;
     this.language = localStorage.getItem('language') || window.IntlMsg.lang;
     this._setSettings();
@@ -94,7 +93,7 @@ class LoginPage extends intl(CellsPage) {
     return html`
       <cells-co-ejercicio-cells-ui
         name-pokemon=${this.pokemon?.name || ''}
-        image-pokemon=${this.pokemon?.sprites?.front_default || ''}
+        image-pokemon=${this.pokemon?.sprites?.front_default || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
         @get-pokemon=${this._getPokemon}
       ></cells-co-ejercicio-cells-ui>
     `;
@@ -117,11 +116,11 @@ class LoginPage extends intl(CellsPage) {
   }
 
   _goResume() {
-    console.log('log Resume', this.pokemon.sprites);
     this.publish('pokemon', this.pokemon);
     this.publish('imagenes', this.pokemon.sprites);
     this.publish('peliculas', this.pokemon.moves);
     this.publish('abilities', this.pokemon.abilities);
+    this.publish('stats', this.pokemon.stats);
     this.navigate('resume');
   }
 

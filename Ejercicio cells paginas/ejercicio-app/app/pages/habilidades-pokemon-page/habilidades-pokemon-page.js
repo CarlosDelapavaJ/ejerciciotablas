@@ -39,8 +39,11 @@ class HabilidadesPokemonPage extends intl(CellsPage) {
         type: Object,
         attribute: false,
       },
-      pokemon: {
+      abilities: {
         type: Object,
+      },
+      abilitie: {
+        type: String,
       },
     };
   }
@@ -67,8 +70,8 @@ class HabilidadesPokemonPage extends intl(CellsPage) {
   }
 
   onPageEnter() {
-    this.subscribe('pokemon', (pokemon) => (this.pokemon = pokemon));
-    console.log(this.pokemon, this.pageState);
+    this.subscribe('abilities', (abilities) => (this.abilities = abilities));
+    this.abilitie = this.abilities[0].ability.name;
   }
 
   _goProximo() {
@@ -83,9 +86,14 @@ class HabilidadesPokemonPage extends intl(CellsPage) {
     return html`
       <cells-template-paper-drawer-panel>
         <div slot="app__header">
-          <h2>Habilidades Page</h2>
+          
         </div>
         <slot slot="app__main">
+          <h2>Habilidades Page</h2>
+          <bbva-type-text
+          text="Habilidad: ${this.abilitie}"
+          size="2XL"
+        ></bbva-type-text>
           <bbva-button-default
             text="Anterior pantalla"
             @click=${this._goAnterior}

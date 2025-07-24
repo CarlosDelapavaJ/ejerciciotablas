@@ -39,9 +39,9 @@ class PeliculasPage extends intl(CellsPage) {
         type: Object,
         attribute: false,
       },
-      pokemon: {
+      peliculas: {
         type: Object,
-      }
+      },
     };
   }
 
@@ -75,17 +75,15 @@ class PeliculasPage extends intl(CellsPage) {
   }
 
   onPageEnter() {
-    this.subscribe('pokemon', (pokemon) => this.pokemon = pokemon);
-    console.log(this.pokemon, this.pageState);
+    this.subscribe('peliculas', (peliculas) => (this.peliculas = peliculas));
+    console.log(this.peliculas);
   }
 
   render() {
     return html`
       <cells-template-paper-drawer-panel>
-        <div slot="app__header">
-          <h2>Peliculas Page</h2>
-        </div>
         <slot slot="app__main">
+          <h2>Peliculas Page</h2>
           <bbva-button-default
             text="Anterior pantalla"
             @click=${this._goAnterior}

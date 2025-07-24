@@ -29,10 +29,10 @@ class ImagenesPokemonPage extends intl(CellsPage) {
         type: Object,
         attribute: false,
       },
-      language: {
+      back_default: {
         type: String,
       },
-      dark: {
+      front_default: {
         type: String,
       },
       i18nKeys: {
@@ -56,6 +56,8 @@ class ImagenesPokemonPage extends intl(CellsPage) {
 
   constructor() {
     super();
+    this.back_default = '';
+    this.front_default = '';
     this.i18nKeys = DEFAULT_I18N_KEYS;
     this.subscribe('page_state', (pageState) => (this.pageState = pageState));
     this.dispatchEvent(
@@ -76,31 +78,32 @@ class ImagenesPokemonPage extends intl(CellsPage) {
 
   onPageEnter() {
     this.subscribe('imagenes', (pokemon) => (this.imagenes = pokemon));
+    this.back_default = this.imagenes.back_default;
+    this.front_default = this.imagenes.front_default;
     console.log(this.imagenes, this.imagenes.back_default, this.pageState);
   }
 
   render() {
     return html`
       <cells-template-paper-drawer-panel>
-        <div slot="app__header">
-          <h2>Imagenes Page</h2>
-        </div>
         <slot slot="app__main">
+        <h2>Imagenes Page</h2>
+        <div class="imagenes">
           <bbva-banner-image
             id="imgBanner"
             size="S"
-            image-src=${this.imagenes.back_default || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
+            image-src=${this.back_default || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
             img-accessibility-text="Imagen de Pokémon"
             height="220px"
           ></bbva-banner-image>
           <bbva-banner-image
             id="imgBanner"
             size="S"
-            image-src=${this.imagenes || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
+            image-src=${this.front_default || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
             img-accessibility-text="Imagen de Pokémon"
-            height="220px"
+            height="100px"
           ></bbva-banner-image>
-
+        </div>
           <bbva-button-default
             text="Anterior pantalla"
             @click=${this._goAnterior}

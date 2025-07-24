@@ -2,5 +2,39 @@ import { css, unsafeCSS } from 'lit-element';
 import * as foundations from '@bbva-web-components/bbva-foundations-styles';
 
 export default css`
+@charset "UTF-8";
+.imagenes {
+  display: flex;
+  gap: 16px; /* Espacio entre imágenes */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Para que se acomoden en pantallas pequeñas */
+  margin-bottom: 20px;
+}
 
+bbva-banner-image {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+bbva-banner-image:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+bbva-button-default {
+  margin: 10px;
+  display: inline-block;
+}
+
+.botones {
+  text-align: center;
+}
 `;

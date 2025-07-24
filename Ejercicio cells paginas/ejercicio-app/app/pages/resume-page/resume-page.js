@@ -30,7 +30,7 @@ class ResumePage extends intl(CellsPage) {
         type: Object,
         attribute: false,
       },
-      language: {
+      frontDefault: {
         type: String,
       },
       dark: {
@@ -40,7 +40,13 @@ class ResumePage extends intl(CellsPage) {
         type: Object,
         attribute: false,
       },
-      pokemon: {
+      stats: {
+        type: Object,
+      },
+      imagenes: {
+        type: Object,
+      },
+      estatus: {
         type: Object,
       }
     };
@@ -58,6 +64,7 @@ class ResumePage extends intl(CellsPage) {
   constructor() {
     super();
     this.i18nKeys = DEFAULT_I18N_KEYS;
+    this.estatus = {vida: '', ataque: '', defensa: ''};
     this.subscribe('page_state', (pageState) => (this.pageState = pageState));
     this.dispatchEvent(
       new CustomEvent('application-started', {
@@ -75,17 +82,40 @@ class ResumePage extends intl(CellsPage) {
   }
 
   onPageEnter() {
-    this.subscribe('pokemon', (pokemon) => this.pokemon = pokemon);
-    console.log(this.pokemon, this.pageState);
+    this.subscribe('stats', (stats) => this.stats = stats);
+    this.subscribe('imagenes', (imagenes) => this.imagenes = imagenes);
+    this.frontDefault = this.imagenes.front_default;
+
+    this.estatus.vida = this.stats[0].base_stat;
+    this.estatus.defensa = this.stats[2].base_stat;
+    this.estatus.ataque = this.stats[1].base_stat;
+    console.log(this.estatus, this.stats);
   }
 
   render() {
     return html`
       <cells-template-paper-drawer-panel>
-        <div slot="app__header">
-          <h2>Resumen Page</h2>
-        </div>
         <slot slot="app__main">
+          <h2>Resumen Page</h2>
+          <bbva-banner-image
+            id="imgBanner"
+            size="S"
+            image-src=${this.front_default || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png'}
+            img-accessibility-text="Imagen de Pokémon"
+            height="100px"
+          ></bbva-banner-image>
+          <bbva-type-text
+          text="Vida: ${this.estatus.vida || ''}"
+          size="2XL"
+        ></bbva-type-text>
+        <bbva-type-text
+          text="Ataque: ${this.estatus.ataque || ''}"
+          size="2XL"
+        ></bbva-type-text>
+        <bbva-type-text
+          text="Defensa: ${this.estatus.defensa || ''}"
+          size="2XL"
+        ></bbva-type-text>
           <bbva-button-default
               text="Anterior pantalla"
               @click=${this._goAnterior}
